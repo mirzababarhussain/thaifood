@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "token": {
+      "type": "text"
+    },
+    "dishes": {
+      "type": "json"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dish.dish",
+      "inversedBy": "orders"
+    }
+  }
+}
